@@ -17,11 +17,26 @@
       type="plone"
       directory="static"
       />
-
   <browser:page
       name="about_us"
       for="*"
       class=".view.AboutUs"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="news_listing"
+      for="*"
+      class=".folder_listing.FolderListing"
+      template="template/news_listing.pt"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="product_listing"
+      for="*"
+      class=".folder_listing.FolderListing"
+      template="template/product_listing.pt"
       layer="zope.interface.Interface"
       permission="zope2.View"
       />
