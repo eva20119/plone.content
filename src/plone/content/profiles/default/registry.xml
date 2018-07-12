@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<registry>
+<!-- -*- extra stuff goes here -*- -->
+    <records interface="plone.content.browser.basic_inform_configlet.IInform" />
+
+</registry>
