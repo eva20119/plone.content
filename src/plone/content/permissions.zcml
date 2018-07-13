@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="plone.content.AddCover"
+        title="plone.content: Add Cover"
+    />
+
+        
+    <permission
         id="plone.content.AddProduct"
         title="plone.content: Add Product"
     />
