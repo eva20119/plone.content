@@ -13,7 +13,7 @@ from plone import api
 
 class FolderListing(BrowserView):
     def __init__(self, context, request):
-        super(NewsListing, self).__init__(context, request)
+        super(FolderListing, self).__init__(context, request)
 
         self.plone_view = getMultiAdapter(
             (context, request), name=u'plone')
@@ -28,7 +28,7 @@ class FolderListing(BrowserView):
         self.b_size = int(b_size) if b_size is not None else limit_display
         b_start = getattr(self.request, 'b_start', None)
         self.b_start = int(b_start) if b_start is not None else 0
-	self.sort_order = self.request.get('sort_oder', '')
+	self.sort_order = self.request.get('sort_order', '')
 	self.sort_on = self.request.get('sort_on', '')
 
     def results(self, **kwargs):
@@ -38,6 +38,8 @@ class FolderListing(BrowserView):
         kwargs.setdefault('batch', True)
         kwargs.setdefault('b_size', self.b_size)
         kwargs.setdefault('b_start', self.b_start)
+        kwargs.setdefault('sort_order', self.sort_order)
+        kwargs.setdefault('sort_on', self.sort_on)
 
         listing = aq_inner(self.context).restrictedTraverse(
             '@@folderListing', None)
@@ -62,3 +64,19 @@ class FolderListing(BrowserView):
     def pdb(self):
         import pdb;pdb.set_trace()
 
+    def getLeftCol(self):
+        productBrains = api.content.find(context=self.context, portal_type='Product')
+	sortList = {}
+        for item in productBrains:
+            obj = item.getObject()
+            category = obj.category
+            subcategory = obj.subcategory
+            if sortList.has_key(category):
+                sortList[category][0] += 1
+                if sortList[category][1].has_key(subcategory):
+                    sortList[category][1][subcategory] += 1
+                else:
+                    sortList[category][1][subcategory] = 1
+            else:
+                sortList[category] = [1, {subcategory: 1}]
+        return sortList

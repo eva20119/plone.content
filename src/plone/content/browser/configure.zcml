@@ -18,6 +18,13 @@
       directory="static"
       />
   <browser:page
+      name="news_detail"
+      for="*"
+      class=".view.NewsDetail"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
       name="about_us"
       for="*"
       class=".view.AboutUs"
@@ -37,6 +44,20 @@
       for="*"
       class=".folder_listing.FolderListing"
       template="template/product_listing.pt"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="product_detail"
+      for="*"
+      class=".view.ProductDetail"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="contact_us"
+      for="*"
+      class=".view.ContactUs"
       layer="zope.interface.Interface"
       permission="zope2.View"
       />

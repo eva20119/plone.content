@@ -29,17 +29,17 @@
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
-    <element value="plone.app.dexterity.behaviors.id.IShortName"/>
     <element value="plone.app.lockingbehavior.behaviors.ILocking" />
   </property>
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++Product</property>
-  <property name="default_view">view</property>
+  <property name="default_view">product_detail</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">view</property>
+  <property name="immediate_view">product_detail</property>
   <property name="view_methods">
     <element value="view"/>
+    <element value="product_detail"/>
   </property>
 
   <!-- Method aliases -->

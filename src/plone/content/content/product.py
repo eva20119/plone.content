@@ -41,8 +41,13 @@ class IProduct(model.Schema):
     def price_invariant(data):
         if data.price < data.salePrice:
             raise Invalid(_(u'The sale price is bigger than price!'))
-    cover = namedfile.NamedBlobImage(
-        title=_(u'Cover Image'),
+
+    cover1 = namedfile.NamedBlobImage(
+        title=_(u'Cover1 Image'),
+        required=True,
+    )
+    cover2 = namedfile.NamedBlobImage(
+        title=_(u'Cover2 Image'),
         required=True,
     )
     brand = schema.TextLine(
@@ -61,7 +66,7 @@ class IProduct(model.Schema):
     )
 
     subcategory = schema.TextLine(
-        title=_(u'Subcategory'),
+        title=_(u'Subject'),
         required=True
     )
     description = schema.Text(

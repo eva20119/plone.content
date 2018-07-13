@@ -11,6 +11,7 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
   <metal:listingmacro define-macro="listing">
+${view/getLeftCol}
     <tal:results define="batch view/batch;">
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries"
@@ -25,7 +26,9 @@
                 <article class="entry">
                   <header metal:define-macro="listitem" >
 		   ${item_title}
-		   <img src="${item_url}/@@images/image/thumb">
+		   <a href="${item_url}">
+		     <img src="${item_url}/@@images/cover/thumb">
+		   </a>
                   </header>
                 </article>
               </metal:block>
