@@ -10,7 +10,17 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
+<tal:define define="item python: view.context;
+                    item_url python: item.absolute_url();
+                    image_url python: item_url + '/@@images/image'; 
+                    default_img string:++theme++blacksea/images/default.jpg ">
 
+  <img src="${python: image_url if item.getIcon() else default_img}" style="width: 700px;height: 500px">
+
+  <p style="font-size:25px;color:#000;margin-top: 10px;padding-bottom: 10px;border-bottom: 1px solid #ccc">${python: view.context.title} </p>
+  <p style="font-size: 20px;margin-bottom: 10px">${python: item.description}</p>
+  <p style="font-size: 20px" tal:content="structure python: item.text.raw"></p>
+</tal:define>
 </metal:content-core>
 </metal:content-core>
 
