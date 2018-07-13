@@ -11,11 +11,49 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-${view/fax}
-${view/address}
-${view/cellphone}
-${view/email}
+<style>
+.fa{
+    font-size: 33px;
+}
+.col-md-4{
+    text-align: center;
+}
+.title{
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+}
+.content{
+    font-size: 16px;
+}
+</style>
 
+<iframe 
+    width="600" 
+    height="450" 
+    frameborder="0" 
+    style="border:0" 
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDM1VIFBF1C-JRek5n-ZzN4tnvuRAQg86Q&q=陽明山" 
+    allowfullscreen>
+</iframe>
+
+<div class="col-xs-12">
+  <div class="col-md-4">
+    <i class="fa fa-phone"></i>
+    <p class="title">Phone</p>
+    <p class="content">${view/cellphone}</p>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-envelope"></i>
+    <p class="title">Email</p>
+    <p class="content">${view/cellphone}</p>
+  </div>
+  <div class="col-md-4">
+    <i class="fa fa-map"></i>
+    <p class="title">Address</p>
+    <p class="content">${view/address}</p>
+  </div>
+</div>
 </metal:content-core>
 </metal:content-core>
 

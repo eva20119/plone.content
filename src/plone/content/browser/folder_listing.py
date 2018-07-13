@@ -23,7 +23,7 @@ class FolderListing(BrowserView):
             (context, request), name=u'pas_member')
 
         limit_display = getattr(self.request, 'limit_display', None)
-        limit_display = int(limit_display) if limit_display is not None else 10
+        limit_display = int(limit_display) if limit_display is not None else 9
         b_size = getattr(self.request, 'b_size', None)
         self.b_size = int(b_size) if b_size is not None else limit_display
         b_start = getattr(self.request, 'b_start', None)

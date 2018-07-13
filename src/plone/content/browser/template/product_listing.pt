@@ -23,6 +23,31 @@
 .pagination .next a, .pagination .previous a{
     width: 80px;
 }
+.pagination-bar{
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination-bar ul {
+    display: inline-flex;
+}
+.pagination-bar ul li {
+    float: left;
+    margin: 0 2px;
+}
+.pagination-bar ul li a {
+    background: #f0f0f0;
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+}
+.pagination{
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
 </style>
 
   <metal:listingmacro define-macro="listing">
@@ -36,14 +61,14 @@
                 item_url item/getURL;
                 item_title item/Title;
                 ">
-              <div class="col-xs-12" style='margin-bottom: 10px'>            
-                <div style="float:left;margin-right: 15px">
+              <div class="col-md-4 col-xs-6" style='margin-bottom: 10px'>            
+                <div style="position: relative;overflow: hidden;min-width: 70px;">
 	          <a href="${item_url}">
-	            <img src="${item_url}/@@images/cover1/preview">
+	            <img src="${item_url}/@@images/cover1/preview" style="border-bottom: 1px solid #f44336;">
 	          </a>
 	        </div>
 
-		<div>
+		<div style="margin-top: 20px;text-align: center;">
 		  <a href="${item_url}" style='font-size: 16px'>
 		    ${python: item.title}
 		  </a>
@@ -54,9 +79,6 @@
 		    <del style="font-size: 14px; color: #f44336; font-weight: 400">
                       ${python: item.salePrice}
                     </del>
-                  </div>
-		  <div style="marign: 8px 0">
-                    <span class="font-size:16px">${python: item.description}</span>
                   </div>
 		</div>
 	      </div>
