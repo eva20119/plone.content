@@ -11,6 +11,12 @@ from zope.globalrequest import getRequest
 from plone.content.browser.basic_inform_configlet import IInform
 
 
+class CoverView(BrowserView):
+    template = ViewPageTemplateFile('template/cover_view.pt')
+    def __call__(self):
+        return self.template()
+
+
 class NewsDetail(BrowserView):
     template = ViewPageTemplateFile('template/news_detail.pt')
     def __call__(self):

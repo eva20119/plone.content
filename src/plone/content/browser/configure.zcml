@@ -18,6 +18,13 @@
       directory="static"
       />
   <browser:page
+      name="cover_view"
+      for="*"
+      class=".view.CoverView"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
       name="news_detail"
       for="*"
       class=".view.NewsDetail"
