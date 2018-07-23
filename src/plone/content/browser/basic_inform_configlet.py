@@ -10,23 +10,28 @@ from plone.directives import form as Form
 
 class IInform(Form.Schema):
 
-    email = schema.Text(
+    email = schema.TextLine(
         title=_(u'email'),
 	default=u'',
         required=False,
     )
-    cellphone = schema.Text(
+    cellphone = schema.TextLine(
         title=_(u'cellphone'),
         default=u'',
         required=False,
     )
-    address = schema.Text(
+    address = schema.TextLine(
         title=_(u'address'),
         default=u'',
         required=False
     )
-    fax = schema.Text(
+    fax = schema.TextLine(
         title=_(u'fax'),
+        default=u'',
+        required=False
+    )
+    company = schema.TextLine(
+        title=_(u'company'),
         default=u'',
         required=False
     )

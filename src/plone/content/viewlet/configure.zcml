@@ -8,11 +8,55 @@
         name="cover_banner"
         for="plone.content.content.cover.ICover"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-        template="cover_banner.pt"
+        template="template/cover_banner.pt"
         class=".viewlet.CoverBanner"
         layer="zope.interface.Interface"
         permission="zope2.View"
     />
-
+    <browser:viewlet
+        name="cover_news"
+        for="plone.content.content.cover.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="template/cover_news.pt"
+        class=".viewlet.CoverNews"
+        layer="zope.interface.Interface"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="cover_new_product"
+        for="plone.content.content.cover.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="template/cover_new_product.pt"
+        class=".viewlet.CoverNewProduct"
+        layer="zope.interface.Interface"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="cover_ad"
+        for="plone.content.content.cover.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="template/cover_ad.pt"
+        class=".viewlet.CoverAd"
+        layer="zope.interface.Interface"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="cover_triple"
+        for="plone.content.content.cover.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="template/cover_triple.pt"
+        class=".viewlet.CoverTriple"
+        layer="zope.interface.Interface"
+        permission="zope2.View"
+    />
+    <browser:viewlet
+        name="new_footer"
+        for="plone.content.content.cover.ICover"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="template/new_footer.pt"
+        class=".viewlet.NewFooter"
+        layer="zope.interface.Interface"
+        permission="zope2.View"
+    />
 </configure>
 

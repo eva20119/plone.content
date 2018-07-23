@@ -42,14 +42,6 @@ class IProduct(model.Schema):
         if data.price < data.salePrice:
             raise Invalid(_(u'The sale price is bigger than price!'))
 
-    cover1 = namedfile.NamedBlobImage(
-        title=_(u'Cover1 Image'),
-        required=True,
-    )
-    cover2 = namedfile.NamedBlobImage(
-        title=_(u'Cover2 Image'),
-        required=True,
-    )
     brand = schema.TextLine(
         title=_(u'Brand'),
         required=True
@@ -74,6 +66,39 @@ class IProduct(model.Schema):
         required=False
     )
 
+    fieldset(_('Set Image'), fields=['cover1', 'cover2', 'innerCover1', 'innerCover2', 'innerCover3', 'innerCover4', 'innerCover5', 'innerCover6'])
+    cover1 = namedfile.NamedBlobImage(
+        title=_(u'Cover1 Image'),
+        required=True,
+    )
+    cover2 = namedfile.NamedBlobImage(
+        title=_(u'Cover2 Image'),
+        required=False,
+    )
+    innerCover1 = namedfile.NamedBlobImage(
+        title=_(u'innerCover1 Image'),
+        required=False,
+    )
+    innerCover2 = namedfile.NamedBlobImage(
+        title=_(u'innerCover2 Image'),
+        required=False,
+    )
+    innerCover3 = namedfile.NamedBlobImage(
+        title=_(u'innerCover3 Image'),
+        required=False,
+    )
+    innerCover4 = namedfile.NamedBlobImage(
+        title=_(u'innerCover4 Image'),
+        required=False,
+    )
+    innerCover5 = namedfile.NamedBlobImage(
+        title=_(u'innerCover5 Image'),
+        required=False,
+    )
+    innerCover6 = namedfile.NamedBlobImage(
+        title=_(u'innerCover6 Image'),
+        required=False,
+    )
 
 
 

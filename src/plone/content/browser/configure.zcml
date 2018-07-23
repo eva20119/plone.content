@@ -68,6 +68,20 @@
       layer="zope.interface.Interface"
       permission="zope2.View"
       />
+  <browser:page
+      name="send_mail"
+      for="*"
+      class=".view.SendMail"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
+  <browser:page
+      name="subscribe_mail"
+      for="*"
+      class=".view.SubscribeMail"
+      layer="zope.interface.Interface"
+      permission="zope2.View"
+      />
 
 
 <!-- configlet -->
